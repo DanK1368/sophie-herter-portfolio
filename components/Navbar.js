@@ -24,7 +24,7 @@ const Navbar = () => {
             <FiMenu size={30} aria-label="Open Navigation Menu" />
           )}
         </button>
-        <div className=" w-[60px] h-[60px] translate-x-[50%] ">
+        <div className=" w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] translate-x-[50%] ">
           <Image src={logo} alt="sophie herter photography logo" />
         </div>
         <ul className=" hidden sm:flex justify-center items-center gap-4">
@@ -58,15 +58,15 @@ const Navbar = () => {
       <div
         className={
           showNavbar
-            ? ` fixed left-0 top-[10vh] w-full h-screen bg-gray-400/10`
+            ? `bg-white/90 fixed left-0 top-[120px] w-full h-screen ease-in duration-300 z-10`
             : ""
         }
       >
         <div
           className={
             showNavbar
-              ? `bg-transparent fixed left-0 top-[10vh] w-full h-screen bg-white p-10 ease-in duration-300`
-              : ` bg-transparent fixed left-[-100%] w-full  h-screen top-[10vh] p-10 ease-in duration-300`
+              ? `bg-transparent fixed left-0 top-[120px] w-full h-screen p-10 ease-in duration-300`
+              : ` bg-transparent fixed left-[-100%] w-full  h-screen top-[120px] p-10 ease-in duration-300`
           }
         >
           <div className=" sm:w-[30%] border-b border-gray-300 my-4 ">
@@ -75,7 +75,7 @@ const Navbar = () => {
             </p>
           </div>
           <div className=" py-4 flex flex-col ">
-            <ul className=" uppercase flex flex-col">
+            <ul className=" uppercase flex flex-col sm:w-fit">
               <Link href="/">
                 <button className="uppercase text-left py-4 text-md font-light tracking-wider text-gray-400 hover:ease-in hover:duration-300 hover:text-secondary">
                   Home
