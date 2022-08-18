@@ -16,7 +16,7 @@ import Image from "next/image";
 
 const Gallery = () => {
   return (
-    <main>
+    <main className="  min-h-[80vh] ">
       <Swiper
         direction={"horizontal"}
         slidesPerView="auto"

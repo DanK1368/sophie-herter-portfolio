@@ -91,13 +91,13 @@ const Navbar = () => {
                   BIO
                 </button>
               </Link>
-              <Link href={"/#projects"}>
+              <Link href={"/contact"}>
                 <button className="uppercase text-left py-4 text-md font-light tracking-wider text-gray-400 hover:ease-in hover:duration-300 hover:text-secondary">
                   CONTACT ME
                 </button>
               </Link>
             </ul>
-            <div className=" pt-20 pt-24 sm:hidden ">
+            <div className="  pt-24 sm:hidden ">
               <p className=" uppercase tracking-widest text-secondary ">
                 LETS CONNECT
               </p>
