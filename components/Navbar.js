@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <header>
-      <div className="min-h-8 pt-10 pl-4 w-1/2 flex justify-between items-center sm:w-full sm:px-4 ">
+      <div className="min-h-8 pt-10 pl-4 w-1/2 flex justify-between items-center sm:w-full sm:px-10 ">
         <button onClick={() => setShowNavbar(!showNavbar)}>
           {showNavbar ? (
             <AiOutlineClose
@@ -24,8 +24,10 @@ const Navbar = () => {
             <FiMenu size={30} aria-label="Open Navigation Menu" />
           )}
         </button>
-        <div className=" w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] translate-x-[50%] ">
-          <Image src={logo} alt="sophie herter photography logo" />
+        <div className=" w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] translate-x-[50%] sm:translate-x-[25%] ">
+          <h1>
+            <Image src={logo} alt="sophie herter photography logo" />
+          </h1>
         </div>
         <ul className=" hidden sm:flex justify-center items-center gap-4">
           <li>
