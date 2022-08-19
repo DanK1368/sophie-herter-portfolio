@@ -79,22 +79,34 @@ const Navbar = () => {
           <div className=" py-4 flex flex-col ">
             <ul className=" uppercase flex flex-col sm:w-fit">
               <Link href="/">
-                <button className="uppercase text-left py-4 text-md font-light tracking-wider text-gray-400 hover:ease-in hover:duration-300 hover:text-secondary">
+                <button
+                  className="uppercase text-left py-4 text-md font-light tracking-wider text-gray-400 hover:ease-in hover:duration-300 hover:text-secondary"
+                  onClick={() => setShowNavbar(false)}
+                >
                   Home
                 </button>
               </Link>
               <Link href={"/"}>
-                <button className="uppercase text-left py-4 text-md font-light tracking-wider text-gray-400 hover:ease-in hover:duration-300 hover:text-secondary">
+                <button
+                  className="uppercase text-left py-4 text-md font-light tracking-wider text-gray-400 hover:ease-in hover:duration-300 hover:text-secondary"
+                  onClick={() => setShowNavbar(false)}
+                >
                   PROJECTS
                 </button>
               </Link>
               <Link href={"/#skills"}>
-                <button className="uppercase text-left py-4 text-md font-light tracking-wider text-gray-400 hover:ease-in hover:duration-300 hover:text-secondary">
+                <button
+                  className="uppercase text-left py-4 text-md font-light tracking-wider text-gray-400 hover:ease-in hover:duration-300 hover:text-secondary"
+                  onClick={() => setShowNavbar(false)}
+                >
                   BIO
                 </button>
               </Link>
               <Link href={"/contact"}>
-                <button className="uppercase text-left py-4 text-md font-light tracking-wider text-gray-400 hover:ease-in hover:duration-300 hover:text-secondary">
+                <button
+                  className="uppercase text-left py-4 text-md font-light tracking-wider text-gray-400 hover:ease-in hover:duration-300 hover:text-secondary"
+                  onClick={() => setShowNavbar(false)}
+                >
                   CONTACT ME
                 </button>
               </Link>

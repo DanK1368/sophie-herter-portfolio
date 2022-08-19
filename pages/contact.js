@@ -1,7 +1,5 @@
 import Head from "next/head";
 import ContactForm from "../components/ContactForm";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 
 const contact = () => {
   return (
@@ -15,9 +13,7 @@ const contact = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar />
       <ContactForm />
-      <Footer />
     </div>
   );
 };
