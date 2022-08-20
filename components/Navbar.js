@@ -94,7 +94,7 @@ const Navbar = () => {
                   PROJECTS
                 </button>
               </Link>
-              <Link href={"/#skills"}>
+              <Link href={"/bio"}>
                 <button
                   className="uppercase text-left py-4 text-md font-light tracking-wider text-gray-400 hover:ease-in hover:duration-300 hover:text-secondary"
                   onClick={() => setShowNavbar(false)}
