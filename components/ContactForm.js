@@ -7,6 +7,7 @@ const ContactForm = () => {
   const form = useRef();
   const [inputValues, setInputValues] = useState({
     user_name: "",
+    user_mobile: "",
     user_email: "",
     user_message: "",
   });
@@ -32,6 +33,7 @@ const ContactForm = () => {
           if (result.status === 200) {
             setInputValues({
               user_name: "",
+              user_mobile: "",
               user_email: "",
               user_message: "",
             });
@@ -58,10 +60,10 @@ const ContactForm = () => {
             onSubmit={sendEmail}
             className=" rounded-md shadow-lg shadow-slate-200 flex flex-col justify-center items-center gap-2 py-8 mt-5 "
           >
-            <div className=" w-full px-3 flex flex-col justify-center items-center gap-3  ">
+            <div className=" w-[80%] px-3 flex flex-col justify-center items-center gap-3  ">
               <label className=" w-full ">
                 <input
-                  className=" w-full py-2 px-4 border-gray-300 border rounded-md tracking-wider placeholder:font-light placeholder:text-gray-500 focus:outline-none focus:border focus:border-gray-900 "
+                  className=" w-full   py-2 px-4 border-gray-300 border-b tracking-wider placeholder:font-light placeholder:text-gray-500 focus:outline-none  focus:border-b-gray-900 "
                   type="text"
                   placeholder="Name"
                   required
@@ -72,7 +74,17 @@ const ContactForm = () => {
               </label>
               <label className=" w-full ">
                 <input
-                  className=" w-full py-2 px-4 border-gray-300 border rounded-md tracking-wider placeholder:font-light placeholder:text-gray-500 focus:outline-none focus:border focus:border-gray-900 "
+                  className=" w-full  py-2 px-4 border-gray-300 border-b tracking-wider placeholder:font-light placeholder:text-gray-500 focus:outline-none  focus:border-b-gray-900 "
+                  type="text"
+                  placeholder="Mobile"
+                  name="user_mobile"
+                  value={inputValues.user_mobile}
+                  onChange={handleInputValues}
+                />
+              </label>
+              <label className=" w-full ">
+                <input
+                  className="w-full  py-2 px-4 border-gray-300 border-b tracking-wider placeholder:font-light placeholder:text-gray-500 focus:outline-none  focus:border-b-gray-900  "
                   type="email"
                   name="user_email"
                   value={inputValues.user_email}
@@ -83,20 +95,20 @@ const ContactForm = () => {
               </label>
               <label className=" w-full ">
                 <textarea
-                  className=" w-full py-2 px-4 border-gray-300 border rounded-md tracking-wider placeholder:font-light placeholder:text-gray-500 focus:outline-none focus:border focus:border-gray-900 "
+                  className=" w-full my-6 py-2 px-4 border-gray-300 border rounded-md tracking-wider placeholder:font-light placeholder:text-gray-500 focus:outline-none focus:border focus:border-gray-900 "
                   cols="30"
-                  rows="10"
+                  rows="7"
                   name="user_message"
                   required
                   value={inputValues.user_message}
-                  placeholder="Your Message"
+                  placeholder="Your message goes here..."
                   onChange={handleInputValues}
                 ></textarea>
               </label>
             </div>
             <button
               type="submit"
-              className=" btn btn-ghost border border-gray-300 "
+              className=" bg-[#2f2e41] text-white btn w-[70%] rounded-full border-none hover:bg-[#e1e6ec] hover:text-[#2f2e41] "
             >
               Send Message
             </button>
