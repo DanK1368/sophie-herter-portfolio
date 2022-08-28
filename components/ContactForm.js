@@ -46,11 +46,11 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="  min-h-[78vh] p-4 md:max-w-[90%] md:mx-auto 2xl:max-w-[80%]  ">
+    <main className="  min-h-[78vh] p-4 md:max-w-[90%] md:mx-auto 2xl:max-w-[80%]  ">
       <div className="  flex justify-center items-center flex-col ">
-        <h2 className=" text-3xl tracking-wider pb-4 text-center ">
+        <h1 className=" text-3xl tracking-wider pb-4 text-center ">
           Book Your Photo Session
-        </h2>
+        </h1>
         <h3 className=" text-center text-lg ">Contact Me</h3>
       </div>
       <div className=" flex flex-col justify-around items-center md:flex-row gap-10 ">
@@ -118,7 +118,7 @@ const ContactForm = () => {
           <Image src={illustration} alt="" />
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 export default ContactForm;
