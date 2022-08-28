@@ -16,7 +16,7 @@ import Image from "next/image";
 
 const Gallery = ({ images }) => {
   return (
-    <main className="  min-h-[80vh] ">
+    <main className="  min-h-[80vh] pt-6 ">
       <Swiper
         direction={"horizontal"}
         slidesPerView="auto"
@@ -54,9 +54,9 @@ const Gallery = ({ images }) => {
         {images.map(image => (
           <SwiperSlide
             key={image.id}
-            className=" flex justify-center items-center "
+            className=" flex justify-center items-center"
           >
-            <div className=" relative h-[500px] w-full max-w-sm  ">
+            <div className=" relative h-[500px] w-full max-w-sm ">
               <Image
                 src={image.attributes.formats.medium.url}
                 alt=""
