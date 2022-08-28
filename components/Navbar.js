@@ -40,15 +40,6 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a
-              href="https://www.facebook.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaFacebookF aria-label="Link to Facebook Page" />
-            </a>
-          </li>
-          <li>
             <a>
               <BsFillShareFill aria-label="Link to share website on social media" />
             </a>
@@ -123,21 +114,13 @@ const Navbar = () => {
               <p className=" uppercase tracking-widest text-secondary ">
                 LETS CONNECT
               </p>
-              <div className=" flex justify-between gap-10 items-center my-10 w-full sm:w-[80%] ">
+              <div className=" flex justify-start gap-10 items-center my-10 w-full sm:w-[80%] ">
                 <a
                   target="_blank"
                   href="https://www.linkedin.com/in/daniel-koett/"
                   rel="noreferrer"
                 >
                   <FaInstagram />
-                </a>
-
-                <a
-                  target="_blank"
-                  href="https://github.com/DanK1368"
-                  rel="noreferrer"
-                >
-                  <FaFacebookF />
                 </a>
                 <a
                   target="_blank"
