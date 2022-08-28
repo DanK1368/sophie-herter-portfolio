@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 import { Mousewheel, FreeMode } from "swiper";
 import Image from "next/image";
 
-const Gallery = () => {
+const Gallery = ({ images }) => {
   return (
     <main className="  min-h-[80vh] ">
       <Swiper
@@ -51,66 +51,21 @@ const Gallery = () => {
         modules={[Mousewheel, FreeMode]}
         className="mySwiper"
       >
-        <SwiperSlide className=" flex justify-center items-center ">
-          <div className=" w-full max-w-sm  ">
-            <Image src={image1} alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" max-w-sm ">
-            <Image src={image2} alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" max-w-sm ">
-            <Image src={image3} alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" max-w-sm ">
-            <Image src={image4} alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" max-w-sm ">
-            <Image src={image1} alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" max-w-sm ">
-            <Image src={image2} alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" max-w-sm ">
-            <Image src={image3} alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" max-w-sm ">
-            <Image src={image4} alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" max-w-sm ">
-            <Image src={image1} alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" max-w-sm ">
-            <Image src={image2} alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" max-w-sm ">
-            <Image src={image3} alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className=" max-w-sm ">
-            <Image src={image4} alt="" />
-          </div>
-        </SwiperSlide>
+        {images.map(image => (
+          <SwiperSlide
+            key={image.id}
+            className=" flex justify-center items-center "
+          >
+            <div className=" relative h-[500px] w-full max-w-sm  ">
+              <Image
+                src={image.attributes.formats.medium.url}
+                alt=""
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </main>
   );

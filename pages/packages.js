@@ -1,6 +1,6 @@
 import Head from "next/head";
 import PackageItem from "../components/PackageItem";
-import { packageList } from "../packages";
+import { packageList } from "../lib/packages";
 
 const packages = () => {
   return (
