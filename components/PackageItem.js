@@ -5,10 +5,12 @@ const PackageItem = ({ title, description, price, features }) => {
     <article className="min-h-[500px] p-10 bg-slate-100 flex flex-col justify-between items-center shadow-md shadow-gray-200 ">
       <div className=" grid gap-5 ">
         <div>
-          <h2 className=" text-xl ">{title}</h2>
+          <h2 className=" text-xl text-center ">{title}</h2>
           <p className=" text-sm font-light ">{description}</p>
         </div>
-        <h3 className=" text-2xl font-extralight ">CHF {price}.-</h3>
+        <h3 className=" text-2xl font-extralight text-center ">
+          CHF {price}.-
+        </h3>
       </div>
 
       <div className=" flex flex-col gap-2 pt-10 h-full ">

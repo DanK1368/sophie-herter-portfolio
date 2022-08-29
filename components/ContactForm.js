@@ -2,8 +2,10 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Image from "next/image";
 import illustration from "../public/assets/illustration.svg";
+import planeSvg from "../public/paperplane.svg";
 
 const ContactForm = () => {
+  const [showSuccessMsg, setShowSuccessMsg] = useState(false);
   const form = useRef();
   const [inputValues, setInputValues] = useState({
     user_name: "",
@@ -37,6 +39,10 @@ const ContactForm = () => {
               user_email: "",
               user_message: "",
             });
+            setShowSuccessMsg(true);
+            setTimeout(() => {
+              setShowSuccessMsg(false);
+            }, 5000);
           }
         },
         error => {
@@ -51,69 +57,88 @@ const ContactForm = () => {
         <h1 className=" text-3xl tracking-wider pb-4 text-center ">
           Book Your Photo Session
         </h1>
-        <h3 className=" text-center text-lg ">Contact Me</h3>
+        <h2 className=" text-center text-lg ">Contact Me</h2>
       </div>
       <div className=" flex flex-col justify-around items-center md:flex-row gap-10 ">
-        <div className=" w-full md:max-w-[600px] ">
-          <form
-            ref={form}
-            onSubmit={sendEmail}
-            className=" rounded-md shadow-lg shadow-slate-200 flex flex-col justify-center items-center gap-2 py-8 mt-5 "
-          >
-            <div className=" w-[80%] px-3 flex flex-col justify-center items-center gap-3  ">
-              <label className=" w-full ">
-                <input
-                  className=" w-full   py-2 px-4 border-gray-300 border-b tracking-wider placeholder:font-light placeholder:text-gray-500 focus:outline-none  focus:border-b-gray-900 "
-                  type="text"
-                  placeholder="Name"
-                  required
-                  name="user_name"
-                  value={inputValues.user_name}
-                  onChange={handleInputValues}
-                />
-              </label>
-              <label className=" w-full ">
-                <input
-                  className=" w-full  py-2 px-4 border-gray-300 border-b tracking-wider placeholder:font-light placeholder:text-gray-500 focus:outline-none  focus:border-b-gray-900 "
-                  type="text"
-                  placeholder="Mobile"
-                  name="user_mobile"
-                  value={inputValues.user_mobile}
-                  onChange={handleInputValues}
-                />
-              </label>
-              <label className=" w-full ">
-                <input
-                  className="w-full  py-2 px-4 border-gray-300 border-b tracking-wider placeholder:font-light placeholder:text-gray-500 focus:outline-none  focus:border-b-gray-900  "
-                  type="email"
-                  name="user_email"
-                  value={inputValues.user_email}
-                  placeholder="Email"
-                  required
-                  onChange={handleInputValues}
-                />
-              </label>
-              <label className=" w-full ">
-                <textarea
-                  className=" w-full my-6 py-2 px-4 border-gray-300 border rounded-md tracking-wider placeholder:font-light placeholder:text-gray-500 focus:outline-none focus:border focus:border-gray-900 "
-                  cols="30"
-                  rows="7"
-                  name="user_message"
-                  required
-                  value={inputValues.user_message}
-                  placeholder="Your message goes here..."
-                  onChange={handleInputValues}
-                ></textarea>
-              </label>
-            </div>
-            <button
-              type="submit"
-              className=" bg-[#2f2e41] text-white btn w-[70%] rounded-full border-none hover:bg-[#e1e6ec] hover:text-[#2f2e41] "
+        {!showSuccessMsg && (
+          <div className=" w-full md:max-w-[600px] ">
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className=" rounded-md shadow-lg shadow-slate-200 flex flex-col justify-center items-center gap-2 py-8 mt-5 "
             >
-              Send Message
-            </button>
-          </form>
-        </div>
+              <div className=" w-[80%] px-3 flex flex-col justify-center items-center gap-3  ">
+                <label className=" w-full ">
+                  <input
+                    className=" w-full   py-2 px-4 border-gray-300 border-b tracking-wider placeholder:font-light placeholder:text-gray-500 focus:outline-none  focus:border-b-gray-900 "
+                    type="text"
+                    placeholder="Name"
+                    required
+                    name="user_name"
+                    value={inputValues.user_name}
+                    onChange={handleInputValues}
+                  />
+                </label>
+                <label className=" w-full ">
+                  <input
+                    className=" w-full  py-2 px-4 border-gray-300 border-b tracking-wider placeholder:font-light placeholder:text-gray-500 focus:outline-none  focus:border-b-gray-900 "
+                    type="text"
+                    placeholder="Mobile"
+                    name="user_mobile"
+                    value={inputValues.user_mobile}
+                    onChange={handleInputValues}
+                  />
+                </label>
+                <label className=" w-full ">
+                  <input
+                    className="w-full  py-2 px-4 border-gray-300 border-b tracking-wider placeholder:font-light placeholder:text-gray-500 focus:outline-none  focus:border-b-gray-900  "
+                    type="email"
+                    name="user_email"
+                    value={inputValues.user_email}
+                    placeholder="Email"
+                    required
+                    onChange={handleInputValues}
+                  />
+                </label>
+                <label className=" w-full ">
+                  <textarea
+                    className=" w-full my-6 py-2 px-4 border-gray-300 border rounded-md tracking-wider placeholder:font-light placeholder:text-gray-500 focus:outline-none focus:border focus:border-gray-900 "
+                    cols="30"
+                    rows="7"
+                    name="user_message"
+                    required
+                    value={inputValues.user_message}
+                    placeholder="Your message goes here..."
+                    onChange={handleInputValues}
+                  ></textarea>
+                </label>
+              </div>
+              <button
+                type="submit"
+                className=" bg-[#2f2e41] text-white btn w-[70%] rounded-full border-none hover:bg-[#e1e6ec] hover:text-[#2f2e41] "
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        )}
+
+        {/* Success Message  */}
+        {showSuccessMsg && (
+          <div className=" w-full md:max-w-[600px] ">
+            <div className=" rounded-md shadow-lg shadow-slate-200 flex flex-col justify-center items-center gap-10 py-8 mt-5 ">
+              <div className="max-w-lg md:block ">
+                <Image src={planeSvg} alt="" />
+              </div>
+              <div className=" w-[80%] px-3 flex flex-col justify-center items-center gap-3 text-center  ">
+                <h3 className=" text-2xl ">Thank you for getting in touch!</h3>
+                <p>Your message has been sent successfully</p>
+                <p>I will get back to you as soon as I can.</p>
+              </div>
+            </div>
+          </div>
+        )}
+
         <div className="hidden max-w-lg md:block ">
           <Image src={illustration} alt="" />
         </div>
