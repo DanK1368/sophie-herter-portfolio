@@ -62,6 +62,8 @@ const Gallery = ({ images }) => {
                 alt=""
                 layout="fill"
                 objectFit="cover"
+                priority="true"
+                placeholder="blur"
               />
             </div>
           </SwiperSlide>
